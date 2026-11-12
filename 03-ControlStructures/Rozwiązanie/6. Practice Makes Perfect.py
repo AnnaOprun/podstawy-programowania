@@ -350,3 +350,226 @@
 #     print("Has an Instagram account: No")
 
 # ZADANIE 20_______________________________________________________________________________________________________________________________________________________________________
+# Program konwertujący liczbę dziesiętną na liczbę binarną przy użyciu pętli while
+
+# decimal_number = int(input("Wprowadź liczbę dziesiętną: "))
+# original_number = decimal_number
+
+# binary_result = ""
+
+
+# if decimal_number == 0: # Obsługa specjalnego przypadku dla liczby 0
+#     binary_result = "0"
+# else:
+
+#     while decimal_number > 0:                           # Pętla wykonująca dzielenie przez 2, dopóki liczba (iloraz) jest większa od 0
+#         remainder = decimal_number % 2                  # Obliczenie reszty z dzielenia przez 2
+#         binary_result = str(remainder) + binary_result  # Doklejanie reszty na początek ciągu (ponieważ odczytujemy reszty od dołu do góry)
+#         decimal_number = decimal_number // 2            # Podział całkowity liczby przez 2 w celu uzyskania nowego ilorazu
+
+# print(f"{original_number}(10) = {binary_result}(2)")
+
+# ZADANIE 21_______________________________________________________________________________________________________________________________________________________________________
+# Dostępne są monety o nominałach 1, 2 i 5 złotych (PLN). 
+# Napisz program przedstawiający dowolną kwotę (liczba naturalna) wczytaną z klawiatury przy użyciu jak najmniejszej liczby monet.
+
+# amount = int(input("Wprowadź kwotę w PLN: "))
+# original_amount = amount
+
+# coins_5 = amount // 5   # Obliczenie liczby monet 5 zł (dzielenie całkowite)
+# amount = amount % 5     # Reszta do wydania po odliczeniu monet 5 zł
+# coins_2 = amount // 2   # Obliczenie liczby monet 2 zł z pozostałej kwoty
+# amount = amount % 2     # Reszta do wydania po odliczeniu monet 2 zł
+# coins_1 = amount        # Pozostała kwota to liczba monet 1 zł
+
+# print(f"Kwota PLN {original_amount} w monetach:")
+# print(f"Monety 5 PLN: {coins_5}")
+# print(f"Monety 2 PLN: {coins_2}")
+# print(f"Monety 1 PLN: {coins_1}")
+
+# ZADANIE 22_______________________________________________________________________________________________________________________________________________________________________
+# Napisz program, który wypisuje liczby od 1 do 30. Jeśli liczba jest podzielna przez 3, program wypisuje słowo „THREE”. 
+# Następnie, jeśli liczba jest podzielna przez 5, program wypisuje słowo „FIVE”. 
+# Na koniec, jeśli liczba jest podzielna zarówno przez 3, jak i przez 5, program wypisuje słowo „BINGO”.
+
+# for number in range(1, 31):  # Pętla przechodząca przez wszystkie liczby od 1 do 30
+#     if number % 3 == 0 and number % 5 == 0:  # Sprawdzenie, czy liczba jest podzielna zarówno przez 3, jak i przez 5
+#         print("BINGO", end=" ")
+   
+#     elif number % 3 == 0: # Sprawdzenie, czy liczba jest podzielna przez 3
+#         print("THREE", end=" ")
+    
+#     elif number % 5 == 0: # Sprawdzenie, czy liczba jest podzielna przez 5
+#         print("FIVE", end=" ")
+    
+#     else: # Jeśli liczba nie spełnia powyższych warunków, wypisujemy jej normalną wartość
+#         print(number, end=" ")
+
+# UWAGA: Warunek podzielności przez obie te liczby jednocześnie (zarówno przez 3, jak i przez 5, czyli przez 15) musimy sprawdzić na samym początku. 
+# Gdybyśmy najpierw sprawdzali samą podzielność przez 3, liczba taka jak 15 wyświetliłaby się jako „THREE” zamiast „BINGO”.
+
+# ZADANIE 23_______________________________________________________________________________________________________________________________________________________________________
+# Napisz program, który tworzy tabelę mnożenia w zakresie od 1 do 10 dla dowolnej liczby wprowadzonej przez użytkownika.
+
+# number = int(input("Wprowadź liczbę: "))
+
+# # Pętla iterująca od 1 do 10 w celu wygenerowania kolejnych wierszy tabeli mnożenia
+# for i in range(1, 11):
+#     result = number * i
+#     print(f"{number} x {i} = {result}")
+
+# ZADANIE 24_______________________________________________________________________________________________________________________________________________________________________
+# Napisz program, który tworzy następujący wzór.
+# *
+# * *
+# * * *
+# * * * *
+# * * * * *
+# * * * *
+# * * *
+# * *
+# *
+
+# for i in range(1, 6): # rosnący wzór od 1 do 5 gwiazdek w wierszu
+#     print("* " * i)
+
+# for i in range(4, 0, -1): #  malejący wzór od 4 do 1 gwiazdki w wierszu
+#     print("* " * i)
+
+# ZADANIE 25_______________________________________________________________________________________________________________________________________________________________________
+# Napisz program, który tworzy następujący wzór.
+# 1
+# 22
+# 333
+# 4444
+# 55555
+# 666666
+# 7777777
+# 88888888
+# 999999999  
+
+# for i in range(1, 10):
+#     print(str(i) * i) # Wyświetlenie cyfry 'i' powtórzonej 'i' razy
+
+# ZADANIE 26_______________________________________________________________________________________________________________________________________________________________________
+# Karta płatnicza jest zabezpieczona czterocyfrowym kodem PIN (0805). Napisz program, który sprawdza, czy kod PIN wprowadzony w terminalu płatniczym jest poprawny.
+# Użytkownik ma do dyspozycji maksymalnie trzy próby wprowadzenia kodu PIN. W przypadku trzech nieudanych prób karta zostaje zablokowana.
+
+# correct_pin = "0805"
+# attempts = 3
+
+# while attempts > 0: # Pętla wykonująca się dopóki użytkownik ma dostępne próby
+#     entered_pin = input("Wprowadź kod PIN: ")
+    
+#     if entered_pin == correct_pin:
+#         print("Poprawny PIN. Dostęp przyznany!")
+#         break
+#     else:
+#         print("Niepoprawny...")
+#         attempts -= 1  # Zmniejszenie liczby pozostałych prób o 1
+
+# if attempts == 0: # Jeśli wyczerpano wszystkie próby i nie wpisano poprawnego PIN-u
+#     print("Przepraszamy, Twoja karta płatnicza została zablokowana.")
+
+# ZADANIE 27_______________________________________________________________________________________________________________________________________________________________________
+# Komputerowa klawiatura numeryczna ma układ klawiszy jak poniżej.                                                  7 8 9
+# Dołączony kod programu drukuje klawiaturę komputera. Przeanalizuj program pod kątem uzyskanych wyników.           4 5 6
+# Czy rozumiesz każdą instrukcję programu? Następnie zmodyfikuj kod programu, zastępując pętlę for pętlą while.     1 2 3
+
+# for i in range(6, -1, -3): # Zewnętrzna pętla (sterowana zmienną i) odpowiada za kolejne wiersze klawiatury numerycznej i przyjmuje wartości: 6, 3 oraz 0.
+#     for j in range(1, 4): # Wewnętrzna pętla (sterowana zmienną j) odpowiada za kolumny i wykonuje się trzykrotnie dla każdego wiersza, przyjmując wartości od 1 do 3.
+#         print(f'{i + j}', end=' ') # Obliczanie wartości polega na dodaniu do siebie zmiennych i + j, co daje odpowiednie cyfry klawiatury w każdym wierszu (7 8 9, 4 5 6, 1 2 3).
+#     print() # puste print() przenosi kursor do nowej linii po zakończeniu każdego wiersza.
+# _________________________________________________________________________________
+
+# i = 6 # Ustawiamy początkową wartość i na 6 (odpowiednik początku range(6, -1, -3))
+
+# while i >= 0: # Zewnętrzna pętla działa tak długo, jak i jest większe lub równe 0
+
+#     j = 1 # Dla każdego wiersza resetujemy j do wartości 1
+
+#     while j < 4: # Wewnętrzna pętla działa dla j od 1 do 3 (zamiast range(1, 4))
+
+#         print(f'{i + j}', end=' ')
+#         j += 1  # Zwiększamy j o 1 w każdym kroku
+
+#     print() # Przechodzimy do nowej linii po wypisaniu całego wiersza
+#     i -= 3  # Zmniejszamy i o 3 w każdym kroku (odpowiednik skoku -3 w range)
+
+# ZADANIE 28_______________________________________________________________________________________________________________________________________________________________________
+# Napisz program, który wypisuje pierwsze dwadzieścia wyrazów ciągu Fibonacciego. 
+# Ciąg jest zdefiniowany następująco: pierwszy wyraz jest równy 0, drugi jest równy 1, a każdy kolejny wyraz jest sumą dwóch poprzednich.
+
+# a = 0
+# b = 1
+
+# print("Pierwsze 20 wyrazów ciągu Fibonacciego:")
+
+# for i in range(20): # Pętla wykonująca się 20 razy
+#     print(a, end=" ") # Wypisujemy aktualny wyraz (a) z odstępem
+    
+#     a, b = b, a + b # Obliczamy kolejny wyraz jako sumę dwóch poprzednich
+#                     # a = b
+#                     # b = a + b
+# print()
+
+# ZADANIE 29_______________________________________________________________________________________________________________________________________________________________________
+# Liczba naturalna większa niż 1 jest nazywana liczbą pierwszą, jeśli ma dokładnie dwa czynniki naturalne o wartościach 1 oraz ta liczba. 
+# Napisz program, który znajduje N pierwszych liczb pierwszych. 
+# Odczytaj wartość N z klawiatury. Używając instrukcji pętli, sprawdź, czy dana liczba jest podzielna tylko przez 1 i przez siebie. 
+
+# n = int(input("Wprowadź liczbę N (ile liczb pierwszych wypisać): "))
+
+# found_primes = 0  # licznik, który śledzi, ile liczb pierwszych już znaleźliśmy.
+# current_number = 2  # liczba, którą w danym momencie sprawdzamy (zaczynamy od 2, bo to najmniejsza liczba pierwsza).
+
+# print("Liczby pierwsze:", end=" ")
+
+# while found_primes < n:
+#     is_prime = True  # Zakładamy, że sprawdzana liczba jest pierwsza
+    
+#     # Sprawdzamy dzielniki od 2 do current_number -1
+#     # Tutaj używamy tradycyjnego sprawdzenia mniejszego od current_number za pomocą pętli
+#     divisor = 2
+#     while divisor < current_number:
+#         if current_number % divisor == 0:
+#             is_prime = False  # Znaleziono dzielnik, więc to nie jest liczba pierwsza
+#             break
+#         divisor += 1
+        
+#     # Jeśli liczba jest pierwsza, wypisujemy ją i zwiększamy licznik znalezionych
+#     if is_prime and current_number > 1:
+#         print(current_number, end=" ")
+#         found_primes += 1
+
+#     current_number += 1 # Przechodzimy do sprawdzenia kolejnej liczby całkowitej
+# print()
+
+# ZADANIE 30_______________________________________________________________________________________________________________________________________________________________________
+# Napisz program, który wypisuje kupon loterii (liczby od 1 do 49) w formacie jak poniżej.
+# 1 8 15 22 29 36 43
+# 2 9 16 23 30 37 44
+# 3 10 17 24 31 38 45
+# 4 11 18 25 32 39 46
+# 5 12 19 26 33 40 47
+# 6 13 20 27 34 41 48
+# 7 14 21 28 35 42 49
+
+# for i in range(1, 8): # Pętla zewnętrzna odpowiada za kolejne wiersze (od 1 do 7)
+#     for j in range(i, 50, 7): # Pętla wewnętrzna generuje liczby w danym wierszu, zaczynając od 'i' do 49 ze skokiem co 7
+#         print(j, end=" ") # Wypisujemy liczby w tej samej linii, oddzielone spacją
+#     print() # Przejście do nowej linii po zakończeniu całego wiersza
+
+# ZADANIE 31_______________________________________________________________________________________________________________________________________________________________________
+# Napisz program, który wypisuje 20 losowych liczb całkowitych z zakresu od 5 do 10.
+
+# import random
+
+# print("Losowe liczby:", end=" ")
+
+# for i in range(20):
+    
+#     random_number = random.randint(5, 10)
+#     print(random_number, end=" ")
+
+# print()
