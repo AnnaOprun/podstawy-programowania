@@ -143,3 +143,210 @@
 #     dog_years = 2 * 10.5 + (human_years - 2) * 4 
 
 # print(f"Wiek psa w psich latach wynosi {int(dog_years)} lata.")
+
+# ZADANIE 11_______________________________________________________________________________________________________________________________________________________________________
+# Program komputerowy analizuje cenę produktu w sklepie internetowym. Jeśli cena produktu spadnie o co najmniej 10%, program wyświetli rekomendację zakupu:   
+    # Buy the product!!
+    # Product price reduced by 17%   
+# Stwórz taki program. Aktualna i poprzednia cena produktu są zawarte w zmiennych. Przykładowy wynik:   
+    # Current product price: 140.00
+    # Previous product price: 200.00
+    # Buy the product!!
+    # Product price reduced by 30%
+
+# current_price = 140.00  # Aktualna cena produktu
+# previous_price = 200.00 # Poprzednia cena produktu
+
+# discount = (previous_price - current_price) / previous_price * 100 # Obliczenie procentowego spadku ceny
+
+# print(f"Current product price: {current_price:.2f}")
+# print(f"Previous product price: {previous_price:.2f}")
+
+# if discount >= 10: # Sprawdzenie, czy cena spadła o co najmniej 10%
+#     print("Buy the product!!")
+#     print(f"Product price reduced by {int(discount)}%")
+
+# ZADANIE 12_______________________________________________________________________________________________________________________________________________________________________
+# W jednym ze sklepów internetowych naliczany jest 25% rabat na każdy produkt zakupiony w liczbie większej niż dwa. 
+# Napisz program, który oblicza kwotę do zapłaty. Wczytaj liczbę zakupionych produktów oraz cenę produktu z klawiatury.
+
+# quantity = int(input("Number of products purchased: "))
+# price = float(input("Product price: "))
+
+
+# if quantity > 2:    # Sprawdzenie, czy liczba zakupionych produktów przekracza dwa
+#     total_amount = (2 * price) + ((quantity - 2) * price * 0.75)    # Pierwsze dwa produkty są w pełnej cenie, a pozostałe ze zniżką 25% (płacimy 75% ceny)
+# else:
+#     total_amount = quantity * price    # Bez rabatu, jeśli zakupiono 2 lub mniej produktów
+
+# print(f"Amount to pay: {total_amount:.2f}")
+
+# ZADANIE 13_______________________________________________________________________________________________________________________________________________________________________
+# Prędkość pojazdów na autostradach w Polsce wynosi co najmniej 40 km/h i nie więcej niż 140 km/h. 
+# Napisz program, który wyświetla komunikat o przekroczeniu określonej prędkości samochodu odczytanej z klawiatury.
+
+# speed_limit_min = 40
+# speed_limit_max = 140
+
+# car_speed = int(input("Enter car speed: "))
+
+# if car_speed < speed_limit_min or car_speed > speed_limit_max:
+#     print("Warning: invalid car speed!!")
+# else:
+#     print("Car speed is valid.")
+
+# ZADANIE 14_______________________________________________________________________________________________________________________________________________________________________
+# Influencer to osoba, która może wpływać na zachowanie innych ludzi. Influencer komunikuje się z innymi za pomocą portali społecznościowych. 
+# Napisz program, który sprawdza, czy dana osoba jest dobrym influencerem, czyli czy posiada co najmniej dwa z następujących kont: Facebook, Twitter lub Instagram. 
+# Użyj zmiennych logicznych: facebook, twitter, instagram, których wartość wskazuje, czy dana osoba posiada konto na portalu społecznościowym.
+
+# facebook = True
+# twitter = False
+# instagram = True
+
+# # Wyświetlenie statusu poszczególnych kont
+# print(f"facebook = {facebook}")
+# print(f"twitter = {twitter}")
+# print(f"instagram = {instagram}")
+
+# if (facebook and twitter) or (facebook and instagram) or (twitter and instagram):   # Sprawdzenie, czy użytkownik ma co najmniej dwa konta z wymienionych trzech
+#     print("You are a good influencer!")
+# else:
+#     print("You are not a good influencer.")
+
+# ZADANIE 15_______________________________________________________________________________________________________________________________________________________________________
+# EAN-13 (European Article Number) to kod kreskowy służący do oznaczania towarów. Pierwsze 3 cyfry (590) zazwyczaj wskazują towary wyprodukowane w Polsce. 
+# Napisz program, który sprawdza, czy wprowadzony z klawiatury numer EAN-13 składa się dokładnie z 13 znaków (cyfr). Wypisz komunikat, jeśli numer jest poprawny. 
+# Dodatkowo, tylko wtedy, gdy numer artykułu jest poprawny, wyświetl komunikat, że produkt został wyprodukowany w Polsce.
+
+# ean = input("Wprowadź numer artykułu EAN-13: ")
+
+# if len(ean) == 13 and ean.isdigit():#  Sprawdzenie, czy długość kodu wynosi dokładnie 13 znaków oraz czy składa się wyłącznie z cyfr
+#     print("Numer artykułu jest poprawny")
+    
+#     if ean[0:3] == "590":  # Dodatkowe sprawdzenie (tylko dla poprawnego numeru), czy kod zaczyna się od prefiksu "590" (Polska)
+#         print("Artykuł wyprodukowany w Polsce")
+# else:
+#     print("Numer artykułu jest niepoprawny")
+
+# ZADANIE 16_______________________________________________________________________________________________________________________________________________________________________
+# Pralka pozwala na wypranie kurtki, co zajmuje 40 minut, bielizny, co zajmuje 70 minut, oraz butów, co zajmuje 20 minut. 
+# Dodatkowo można zaprogramować dodatkowe płukanie (15 minut) oraz dodatkowe wirowanie (9 minut). Ustawienia pralki są zapisane w zmiennych. 
+# Napisz program, który oblicza i wyświetla całkowity czas prania.
+
+# total_washing_time = 0
+
+# program = input('Wybierz program prania: (j) - kurtka, (u) - bielizna, (s) - buty: ')
+# extra_rinse = input('Dodatkowe płukanie? (t/n): ')
+# extra_spin = input('Dodatkowe wirowanie? (t/n): ')
+
+# # Sprawdzenie czasu podstawowego programu prania
+# if program == 'j':
+#     total_washing_time += 40
+# elif program == 'u':
+#     total_washing_time += 70
+# elif program == 's':
+#     total_washing_time += 20
+
+# # Dodanie czasu za dodatkowe płukanie (15 minut), jeśli wybrano 't'
+# if extra_rinse.lower() == 't':
+#     total_washing_time += 15
+
+# # Dodanie czasu za dodatkowe wirowanie (9 minut), jeśli wybrano 't'
+# if extra_spin.lower() == 't':
+#     total_washing_time += 9
+
+# print(f"Całkowity czas prania: {total_washing_time} minut")
+
+# ZADANIE 17_______________________________________________________________________________________________________________________________________________________________________
+# Napisz program, który umożliwia konwersję czasu z formatu 24-godzinnego na 12-godzinny. Czas w formacie 24-godzinnym (hh:mm) jest wczytywany z klawiatury. 
+
+# time_24 = input("Wprowadź czas (format 24-godzinny hh:mm): ") # Pobieramy od użytkownika czas w formacie "hh:mm" jako tekst (string), np. "16:32"
+
+# parts = time_24.split(":")# 2. Dzielimy wpisany tekst na dwie części w miejscu, gdzie znajduje się dwukropek (':') --> Metoda .split(":") tworzy listę, np. z "16:32" powstaje ["16", "32"]
+
+# hours = int(parts[0]) # Wyciągamy pierwszą część (godziny) i zamieniamy ją z tekstu (string) na liczbę całkowitą (int), 
+# minutes = parts[1]# Wyciągamy drugą część (minuty). Zostawiamy ją jako tekst, ponieważ minut nie musimy przeliczać,
+
+# # Sprawdzamy, w jakim przedziale mieści się godzina, aby ustalić odpowiednik 12-godzinny oraz porę dnia (am/pm).
+# if hours == 0:
+#     # Jeśli jest północ (00:00), w systemie 12-godzinnym to godzina 12 w nocy (am)
+#     hours_12 = 12
+#     period = "am"
+# elif hours < 12:
+#     # Jeśli jest przed południem (od 01:00 do 11:59), godziny pozostają bez zmian (am)
+#     hours_12 = hours
+#     period = "am"
+# elif hours == 12:
+#     # Dokładnie w południe (12:00) to wciąż godzina 12, ale już po południu (pm)
+#     hours_12 = 12
+#     period = "pm"
+# else:
+#     # Dla godzin popołudniowych i wieczornych (od 13:00 do 23:59) 
+#     # odejmujemy 12, aby uzyskać format 12-godzinny (np. 16 - 12 = 4), i oznaczamy jako pm
+#     hours_12 = hours - 12
+#     period = "pm"
+
+# print(f"Czas w formacie 12-godzinnym: {hours_12}:{minutes}{period}")
+
+# ZADANIE 18_______________________________________________________________________________________________________________________________________________________________________
+# Niech $x$ i $y$ oznaczają współrzędne punktu na płaszczyźnie. Napisz program, który określa, w której ćwiartce układu współrzędnych 
+# znajduje się punkt (x,y), na której osi leży, lub czy znajduje się w pozycji (0,0) układu współrzędnych. 
+
+# x = float(input("Podaj współrzędną x: "))
+# y = float(input("Podaj współrzędną y: "))
+
+# if x == 0 and y == 0:
+#     print(f"Punkt P({x}, {y}) znajduje się w początku układu współrzędnych (0,0)")
+
+# elif x == 0: # Sprawdzenie, czy punkt leży na osi Y (x == 0, a y różne od 0)
+#     print(f"Punkt P({x}, {y}) leży na osi Y")
+
+# elif y == 0: # Sprawdzenie, czy punkt leży na osi X (y == 0, a x różne od 0)
+#     print(f"Punkt P({x}, {y}) leży na osi X")
+
+# elif x > 0 and y > 0: # Sprawdzenie pierwszej ćwiartki (x > 0, y > 0)
+#     print(f"Punkt P({x}, {y}) znajduje się w pierwszej ćwiartce układu współrzędnych")
+
+# elif x < 0 and y > 0: # Sprawdzenie drugiej ćwiartki (x < 0, y > 0)
+#     print(f"Punkt P({x}, {y}) znajduje się w drugiej ćwiartce układu współrzędnych")
+
+# elif x < 0 and y < 0: # Sprawdzenie trzeciej ćwiartki (x < 0, y < 0)
+#     print(f"Punkt P({x}, {y}) znajduje się w trzeciej ćwiartce układu współrzędnych")
+
+# else: # Jeżeli nie żadna z popszednich, to czwarta :D
+#     print(f"Punkt P({x}, {y}) znajduje się w czwartej ćwiartce układu współrzędnych")
+
+# ZADANIE 19_______________________________________________________________________________________________________________________________________________________________________
+# Pytania zamknięte (tak-nie) są często używane w ankietach do oceny nastawienia ludzi do określonych idei lub przekonań. 
+# Napisz program, który wyświetla ankietę składającą się z trzech pytań. Zapisz odpowiedzi w zmiennych typu logicznego. Następnie wyświetl wynik ankiety.
+
+# q1_input = input("SURVEY Are you interested in computer science? (y/n): ")
+# q2_input = input("Do you like playing computer games? (y/n): ")
+# q3_input = input("Do you have an Instagram account? (y/n): ")
+
+# # Konwersja odpowiedzi na zmienne logiczne (True, jeśli wpisano 'y', w przeciwnym razie False)
+# interested_cs = q1_input.lower() == 'y'
+# playing_games = q2_input.lower() == 'y'
+# has_instagram = q3_input.lower() == 'y'
+
+# print()
+# print("SURVEY RESULTS")
+
+# # Wyświetlanie wyników w formacie tekstowym Yes/No na podstawie zmiennych logicznych
+# if interested_cs:
+#     print("Interested in computer science: Yes")
+# else:
+#     print("Interested in computer science: No")
+
+# if playing_games:
+#     print("Playing computer games: Yes")
+# else:
+#     print("Playing computer games: No")
+
+# if has_instagram:
+#     print("Has an Instagram account: Yes")
+# else:
+#     print("Has an Instagram account: No")
+
+# ZADANIE 20_______________________________________________________________________________________________________________________________________________________________________
