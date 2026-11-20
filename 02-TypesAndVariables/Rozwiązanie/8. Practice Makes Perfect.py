@@ -45,8 +45,8 @@
 
 # swift = input("Podaj kod SWIFT: ")
 
-# bank_code = swift[0:4]   # Kod banku to pierwsze 4 znaki (indekse od 0 do 3)
-# country_code = swift[4:6]   # Kod kraju to kolejne 2 znaki (indeksy od 4 do 5)
+# bank_code = swift   # Kod banku to pierwsze 4 znaki (indekse od 0 do 3)
+# country_code = swift   # Kod kraju to kolejne 2 znaki (indeksy od 4 do 5)
 
 # print(f"Bank Code: {bank_code}")
 # print(f"Country Code: {country_code}")
