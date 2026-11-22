@@ -161,7 +161,6 @@
 #     'KK54985',
 #     'LU4864U',
 # ]
-
 # print("Numery rejestracyjne z Krakowa:")
 # counter = 1
 # for car_number in polish_license_plates:

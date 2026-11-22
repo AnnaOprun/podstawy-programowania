@@ -55,7 +55,7 @@
 
 #     # Wczytanie numeru miesiąca z klawiatury i wypisanie jego nazwy jak w przykładzie
 #     user_month = int(input("Podaj numer miesiąca: "))
-#     print(f"Nazwa miesiąca {user_month} to {months.month(user_month)}")
+#     print(f"Nazwa   miesiąca {user_month} to {months.month(user_month)}")
 
 # if __name__ == "__main__":
 #     main()
