@@ -213,3 +213,84 @@
 
 # distribute_books_by_genre(SOURCE_FILE, GENRE_FILES)  # uruchamiamy przetwarzanie książek według gatunków
 # print("Dane książek zostały skopiowane do odpowiednich plików według gatunku.")
+
+
+# ===================================================================================================================================================================================
+# Wyrażenia regularne
+
+# Funkcje modułu re:
+# re.findall(wzorzec, tekst) -> lista wszystkich dopasowań
+# re.search(wzorzec, tekst)  -> pierwsze dopasowanie w tekście (lub None); .group(0) całość, .group(1) pierwsza grupa
+# re.match(wzorzec, tekst)   -> dopasowanie od początku napisu (z $ na końcu dobre do walidacji)
+
+# Zawsze używaj surowych napisów r"...", aby \ nie był traktowany specjalnie przez Pythona.
+
+# Klasy znaków:
+# \d -> cyfra [0-9], \D -> nie-cyfra
+# \w -> litera, cyfra lub _, \s -> spacja/tab/nowa linia
+# .  -> dowolny znak (poza nową linią; z flagą re.DOTALL także nowa linia)
+# [...] -> zbiór znaków, np. [a-z], [A-Za-z0-9_]; [^0-9] -> wszystko poza cyframi
+# \. \- -> dosłowna kropka, myślnik
+
+# Kwantyfikatory:
+# +     -> 1 lub więcej
+# *     -> 0 lub więcej
+# ?     -> 0 lub 1 (opcjonalne)
+# {n}   -> dokładnie n razy
+# {n,m} -> od n do m razy; {n,} -> co najmniej n razy
+
+# Kotwice i grupy:
+# ^, $     -> początek i koniec napisu (lub linii z flagą (?m))
+# \b       -> granica słowa
+# (...)    -> grupa przechwytująca (.group(1))
+# (?:...)  -> grupa bez zapamiętywania numeru grupy
+
+
+# import re  # moduł do obsługi wyrażeń regularnych
+
+# text = "Zamówienie #4082 z dnia 2026-11-27 na kwotę 149.99 zł wysłano na adres anna.oprun@example.com."
+
+# # 1. Szukamy znaku #, a w nawiasach przechwytujemy same cyfry numeru zamówienia
+# order_match = re.search(r"#(\d+)", text)
+
+# # 2. Szukamy 4 cyfr roku, myślnika, 2 cyfr miesiąca, myślnika oraz 2 cyfr dnia
+# date_match = re.search(r"\d{4}-\d{2}-\d{2}", text)
+
+# # 3. Szukamy nazwy przed @, znaku @, domeny, dosłownej kropki oraz końcówki domeny
+# email_match = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", text)
+
+# print(f"Numer zamówienia: {order_match.group(1)}")
+# print(f"Data: {date_match.group(0)}")
+# print(f"Adres e-mail: {email_match.group(0)}")
+
+# _________________________________________________________________________________________________________________________________________________________________________________
+
+# Otwieranie i zamykanie plików (zawsze z with oraz encoding="utf-8"):
+# with open("plik.txt", "r", encoding="utf-8") as f:
+#     ...
+
+# Tryby otwierania plików:
+# "r" -> odczyt (błąd FileNotFoundError, gdy plik nie istnieje)
+# "w" -> zapis / nadpisanie (tworzy nowy plik lub czyści istniejący)
+# "a" -> dopisywanie na końcu pliku (tworzy nowy plik, gdy nie istnieje)
+
+# Odczyt i formatowanie tekstu:
+# f.read()        -> wczytuje całą zawartość pliku jako jeden napis
+# f.splitlines()  -> dzieli tekst na listę linii bez znaków nowej linii
+# for line in f:  -> iteruje po pliku linia po linii (oszczędza pamięć)
+# tekst.strip()   -> usuwa białe znaki (spacje, \n, \r) z początku i końca napisu
+# "\n"            -> znak nowej linii przy zapisie przez f.write(...)
+
+# Pliki CSV (import csv):
+# with open("dane.csv", "r", encoding="utf-8", newline="") as f:
+#     reader = csv.DictReader(f)  # każdy wiersz to słownik {nazwa_kolumny: wartość}
+#     for row in reader:
+#         wartosc = row.get("Kolumna", "").strip()
+#         liczba = int(wartosc)  # lub float(wartosc.replace(",", "."))
+
+# Obsługa wyjątków i pauza w konsoli:
+# try:
+#     ...
+# except FileNotFoundError:
+#     print("Nie znaleziono pliku.")
+# input() -> czeka, aż użytkownik naciśnie klawisz Enter
